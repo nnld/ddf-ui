@@ -61,11 +61,9 @@
   "version": "2.14.0-SNAPSHOT",
   "i18n": {
     "sources.unavailable": "{amountDown} {amountDown, plural, one {source is} other {sources are}} currently down",
-    "sources.polling.error.title": "Error Polling Sources",
     "search.sources.selected.none.message": "No sources are currently selected. Edit the search and select at least one source.",
     "sources.available": "All sources are currently up",
     "sources.title": "Sources",
-    "sources.polling.error.message": "Unable to query server for list of active sources",
     "sources.options.all": "All Sources",
     "form.title": "title"
   },

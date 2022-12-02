@@ -66,13 +66,11 @@ let getErrorResponse = function (event, jqxhr, settings, throwError) {
   ) {
     return { title: 'Logged out', message: 'Please refresh page to log in' }
   } else if (
-    settings.url.indexOf('./internal/catalog/sources') > -1 &&
+    (settings.url.indexOf('./internal/catalog/sources') > -1 ||
+      settings.url.indexOf('./internal/catalog/notifications') > -1) &&
     settings.type === 'GET'
   ) {
-    return {
-      title: properties.i18n['sources.polling.error.title'],
-      message: properties.i18n['sources.polling.error.message'],
-    }
+    return null
   } else if (jqxhr.responseJSON !== undefined) {
     return { title: 'Error', message: jqxhr.responseJSON.message }
   } else {
