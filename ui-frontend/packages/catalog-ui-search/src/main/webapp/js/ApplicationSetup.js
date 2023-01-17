@@ -70,7 +70,10 @@ let getErrorResponse = function (event, jqxhr, settings, throwError) {
       settings.url.indexOf('./internal/catalog/notifications') > -1) &&
     settings.type === 'GET'
   ) {
-    return null
+    return {
+      title: properties.i18n['sources.polling.error.title'],
+      message: properties.i18n['sources.polling.error.message'],
+    }
   } else if (jqxhr.responseJSON !== undefined) {
     return { title: 'Error', message: jqxhr.responseJSON.message }
   } else {
